@@ -21,13 +21,14 @@ def show_countries(*args):
 
 def show_top_types(*args):
     def top_three(items):
-        return sorted(items, key=lambda i: i.value, reverse=True)[:3]
+        return sorted(items, key=lambda i: i.value, reverse=True)[:3] # this should not be hardcoded to top 3
 
     for country in get_top_types_per_country().values():
         print(country)
         for index, export in enumerate(top_three(country.exports.values())):
             print(f"\t{index + 1}: {export}")
 
+# new func to print single country by name
 def show_single_country(*args):
     print (get_country_by_name(*args))
 
@@ -40,7 +41,7 @@ def show(commands):
     {
         "countries": show_countries,
         "top": show_top_types,
-        "single": show_single_country
+        "single": show_single_country  # for single country
     }[commands[0]](commands[1:])
 
 

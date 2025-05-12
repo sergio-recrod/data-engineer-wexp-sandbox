@@ -1,6 +1,10 @@
 import duckdb
 
-
+# this could be done differently, so if a single table fails
+# the rest can continue
+# each duckdb.sql can be wrapped in a try-except statement,
+# and failure of a table can return some clear message without
+# interrupting the whole data loading
 def load_data():
     duckdb.sql("""
     create table Countries(

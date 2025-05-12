@@ -19,7 +19,7 @@ class Country:
         self.exports = {}
 
     def __str__(self):
-        return f"{self.Name} (GDP Growth Rate: {self.GdpGrowthRate}%, year: {self.Year})"
+        return f"{self.Name} (GDP Growth Rate: {self.GdpGrowthRate}%, year: {self.Year})"  # added year to print
 
     def add(self, export):
         if export.whiskey_type not in self.exports.keys():
@@ -30,8 +30,7 @@ class Country:
 def get_country_by_id(id):
     con = duckdb.connect(":default:")
     return Country(
-        con.execute(
-            """
+        con.execute("""
         select c.Id, c.Name, gdp.Value, gdp.Year
         from Countries c
         inner join (
@@ -49,7 +48,7 @@ def get_country_by_id(id):
             on c.Id = gpd.CountryId
         where c.Id = ?
     """,
-            [id],
+            [id]
         ).fetchone()
     )
 
@@ -57,8 +56,7 @@ def get_country_by_id(id):
 def get_country_by_name(name):
     con = duckdb.connect(":default:")
     return Country(
-        con.execute(
-            """
+        con.execute("""
         select c.Id, c.Name, gdp.Value, gdp.Year
         from Countries c
         inner join (
@@ -76,7 +74,7 @@ def get_country_by_name(name):
             on c.Id = gdp.CountryId
         where c.Name = ?
     """,
-            name,
+            [name],
         ).fetchone()
     )
 
@@ -119,7 +117,7 @@ def get_top_types_per_country():
         inner join WhiskeyTypes wt
             on we.WhiskeyType = wt.Id
         order by c.Name, wt.Type 
-    """)
+    """).fetchall()
 
     countries = {}
 
