@@ -29,3 +29,39 @@ print(
         columns=["country", "type", "export"]
     ).sort_values(["country", "type", "export"])
 )
+
+
+def get_top_country_per_type():
+    con = duckdb.connect(":default:")
+    results = con.execute("""
+        with cte as (
+            select 
+                c.Name as CountryName
+                ,wt.Type as WhiskeyType
+                ,we.Value as Value 
+            from Countries c
+            inner join WhiskeyExports we 
+                on c.Id = we.CountryId
+            inner join WhiskeyTypes wt
+                on we.WhiskeyType = wt.Id
+            order by c.Name, wt.Type
+        )
+        select cte.WhiskeyType, cte.CountryName, cte.Value
+        from cte
+        inner join (
+            select WhiskeyType, max(Value) as Top
+            from cte
+            group by WhiskeyType
+        ) topt
+            on cte.WhiskeyType = topt.WhiskeyType
+            and cte.Value = topt.Top
+    """).fetchall()
+
+    return results
+
+print(
+    pd.DataFrame(
+        get_top_country_per_type(),
+        columns=["type", "top_country", "export"]
+    ).sort_values(["type", "top_country", "export"])
+)
