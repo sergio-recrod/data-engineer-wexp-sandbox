@@ -1,6 +1,10 @@
 import argparse
 from load_data import load_data
-from exporters import get_countries, get_top_types_per_country
+from exporters import (
+    get_countries,
+    get_top_types_per_country,
+    get_country_by_name
+)
 
 
 def test(arguments):
@@ -24,13 +28,20 @@ def show_top_types(*args):
         for index, export in enumerate(top_three(country.exports.values())):
             print(f"\t{index + 1}: {export}")
 
+def show_single_country(*args):
+    print (get_country_by_name(*args))
+
 
 def show(commands):
     if commands == []:
         print("Incorrect syntax. \nUsage: wexp show <what>\n")
         return
 
-    {"countries": show_countries, "top": show_top_types}[commands[0]](commands[1:])
+    {
+        "countries": show_countries,
+        "top": show_top_types,
+        "single": show_single_country
+    }[commands[0]](commands[1:])
 
 
 def main():

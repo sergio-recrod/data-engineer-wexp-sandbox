@@ -76,7 +76,7 @@ def get_country_by_name(name):
             on c.Id = gdp.CountryId
         where c.Name = ?
     """,
-            [name],
+            name,
         ).fetchone()
     )
 
