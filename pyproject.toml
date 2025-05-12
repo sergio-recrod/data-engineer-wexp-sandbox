@@ -1,5 +1,6 @@
 [project]
-name = "data-engineer-derec"
+# changed name
+name = "wexp" 
 version = "0.2.0"
 description = ""
 readme = "README.md"

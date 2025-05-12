@@ -13,6 +13,11 @@ def load_data():
     (auto_detect true)
     """)
 
+    # is this table needed? GDP growth could be a column in the Countries
+    # table, as it seems to be unique for each country
+    # a different matter would be if we had a time series, but we would need to add
+    # a year column to the table
+    # potentially we could then filter to get the max year for each country
     duckdb.sql("""
     create table GdpGrowthRates (
         Id         int primary key
