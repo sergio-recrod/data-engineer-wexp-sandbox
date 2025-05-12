@@ -61,6 +61,14 @@ def load_data():
     (auto_detect true);
     """)
 
+    # this table has some duplicate rows in the data table
+    # i.e. australia has several rows with exports for grain
+    # is this an error, is there missing data (e.g. year),
+    # does it have to be aggregated before reporting
+    # or is there a valid reason for this?
+    # if error, some data validation could be included before
+    # ingesting to flag
+    # otherwise they should be aggregated on report
     duckdb.sql("""
     create table WhiskeyExports (
         Id             int primary key

@@ -31,19 +31,24 @@ def get_country_by_id(id):
     con = duckdb.connect(":default:")
     return Country(
         con.execute("""
+        with cte as (
+            select a.Id, a.CountryId, a.Value, a.YearId, y.Year
+            from GdpGrowthRates as a
+            inner join Years as y
+                on a.YearId = y.Id
+        )
+
         select c.Id, c.Name, gdp.Value, gdp.Year
         from Countries c
         inner join (
-            select a.Id, a.CountryId, b.YearId, a.Value, y.Year
-            from GdpGrowthRates as a
-            inner join Years y
-                on a.YearId = y.Id
+            select cte.Id, cte.CountryId, cte.Value, m.Year
+            from cte
             inner join (
-                select CountryId, max(YearId) YearId
-                from GdpGrowthRates
+                select CountryId, max(Year) as Year
+                from cte
                 group by CountryId
-            ) b
-                on a.YearId = b.YearId
+            ) m
+                on cte.Year = m.Year
         ) gdp
             on c.Id = gpd.CountryId
         where c.Id = ?
@@ -57,19 +62,24 @@ def get_country_by_name(name):
     con = duckdb.connect(":default:")
     return Country(
         con.execute("""
+        with cte as (
+            select a.Id, a.CountryId, a.Value, a.YearId, y.Year
+            from GdpGrowthRates as a
+            inner join Years as y
+                on a.YearId = y.Id
+        )
+
         select c.Id, c.Name, gdp.Value, gdp.Year
         from Countries c
         inner join (
-            select a.Id, a.CountryId, b.YearId, a.Value, y.Year
-            from GdpGrowthRates as a
-            inner join Years y
-                on a.YearId = y.Id
+            select cte.Id, cte.CountryId, cte.Value, m.Year
+            from cte
             inner join (
-                select CountryId, max(YearId) YearId
-                from GdpGrowthRates
+                select CountryId, max(Year) as Year
+                from cte
                 group by CountryId
-            ) b
-                on a.YearId = b.YearId
+            ) m
+                on cte.Year = m.Year
         ) gdp
             on c.Id = gdp.CountryId
         where c.Name = ?
@@ -82,19 +92,24 @@ def get_country_by_name(name):
 def get_countries():
     con = duckdb.connect(":default:")
     results = con.execute("""
+        with cte as (
+            select a.Id, a.CountryId, a.Value, a.YearId, y.Year
+            from GdpGrowthRates as a
+            inner join Years as y
+                on a.YearId = y.Id
+        )
+
         select distinct c.Id, c.Name, gdp.Value, gdp.Year
         from Countries c
         inner join (
-            select a.Id, a.CountryId, b.YearId, a.Value, y.Year
-            from GdpGrowthRates as a
-            inner join Years y
-                on a.YearId = y.Id
+            select cte.Id, cte.CountryId, cte.Value, m.Year
+            from cte
             inner join (
-                select CountryId, max(YearId) YearId
-                from GdpGrowthRates
+                select CountryId, max(Year) as Year
+                from cte
                 group by CountryId
-            ) b
-                on a.YearId = b.YearId
+            ) m
+                on cte.Year = m.Year
         ) gdp
             on c.Id = gdp.CountryId
         inner join WhiskeyExports we 
@@ -117,7 +132,7 @@ def get_top_types_per_country():
         inner join WhiskeyTypes wt
             on we.WhiskeyType = wt.Id
         order by c.Name, wt.Type 
-    """).fetchall()
+    """)
 
     countries = {}
 
