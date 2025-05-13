@@ -9,7 +9,6 @@ class Export:
     def __str__(self):
         return f"{self.whiskey_type} worth £{self.value}m"
 
-
 class Country:
     def __init__(self, record):
         self.Id = record[0]
@@ -88,7 +87,6 @@ def get_country_by_name(name):
         ).fetchone()
     )
 
-
 def get_countries():
     con = duckdb.connect(":default:")
     results = con.execute("""
@@ -143,3 +141,24 @@ def get_top_types_per_country():
         countries[record[0]].add(Export(record[1], record[2]))
 
     return countries
+
+def get_top_country_per_type():
+    con = duckdb.connect(":default:")
+    results = con.execute("""
+        select 
+            wt.Type as WhiskeyType
+            ,c.Name as CountryName
+            ,we.Value as Value 
+        from Countries c
+        inner join WhiskeyExports we 
+            on c.Id = we.CountryId
+        inner join WhiskeyTypes wt
+            on we.WhiskeyType = wt.Id
+        order by c.Name, wt.Type 
+    """)
+
+    types = {}
+    for record in results.fetchall():
+        print(record)
+        
+        

@@ -406,3 +406,120 @@ Constraint Error: Violates foreign key constraint because key "Id: 3" does not e
 2025-05-13 16:54:57,336 - ingestion - INFO - Table WhiskeyExports ingested successfully
 2025-05-13 16:54:57,337 - ingestion - WARNING - 1 duplicates found in table WhiskeyExports
 2025-05-13 16:54:57,337 - ingestion - INFO - Finished ingestion.
+2025-05-13 16:56:20,989 - ingestion - INFO - Started ingestion
+2025-05-13 16:56:20,989 - ingestion - INFO - Table Countries
+2025-05-13 16:56:21,003 - ingestion - INFO - Table Countries ingested successfully
+2025-05-13 16:56:21,004 - ingestion - INFO - Table Years
+2025-05-13 16:56:21,006 - ingestion - INFO - Table Years ingested successfully
+2025-05-13 16:56:21,006 - ingestion - INFO - Table GdpGrowthRates
+2025-05-13 16:56:21,009 - ingestion - INFO - Table GdpGrowthRates ingested successfully
+2025-05-13 16:56:21,009 - ingestion - INFO - Table WhiskeyTypes
+2025-05-13 16:56:21,011 - ingestion - INFO - Table WhiskeyTypes ingested successfully
+2025-05-13 16:56:21,011 - ingestion - INFO - Table WhiskeyExports
+2025-05-13 16:56:21,015 - ingestion - INFO - Table WhiskeyExports ingested successfully
+2025-05-13 16:56:21,016 - ingestion - WARNING - 1 duplicates found in table WhiskeyExports
+2025-05-13 16:56:21,016 - ingestion - INFO - Finished ingestion.
+2025-05-13 17:17:06,596 - ingestion - INFO - Started ingestion
+2025-05-13 17:17:06,596 - ingestion - INFO - Table Countries
+2025-05-13 17:17:06,601 - ingestion - INFO - Table Countries ingested successfully
+2025-05-13 17:17:06,602 - ingestion - INFO - Table Years
+2025-05-13 17:17:06,604 - ingestion - INFO - Table Years ingested successfully
+2025-05-13 17:17:06,605 - ingestion - INFO - Table GdpGrowthRates
+2025-05-13 17:17:06,607 - ingestion - INFO - Table GdpGrowthRates ingested successfully
+2025-05-13 17:17:06,607 - ingestion - INFO - Table WhiskeyTypes
+2025-05-13 17:17:06,608 - ingestion - INFO - Table WhiskeyTypes ingested successfully
+2025-05-13 17:17:06,608 - ingestion - INFO - Table WhiskeyExports
+2025-05-13 17:17:06,612 - ingestion - INFO - Table WhiskeyExports ingested successfully
+2025-05-13 17:17:06,613 - ingestion - WARNING - 1 duplicates found in table WhiskeyExports
+2025-05-13 17:17:06,613 - ingestion - INFO - Finished ingestion.
+2025-05-13 17:20:50,403 - ingestion - INFO - Started ingestion
+2025-05-13 17:20:50,403 - ingestion - INFO - Table Countries
+2025-05-13 17:20:50,418 - ingestion - INFO - Table Countries ingested successfully
+2025-05-13 17:20:50,419 - ingestion - INFO - Table Years
+2025-05-13 17:20:50,420 - ingestion - INFO - Table Years ingested successfully
+2025-05-13 17:20:50,421 - ingestion - INFO - Table GdpGrowthRates
+2025-05-13 17:20:50,423 - ingestion - INFO - Table GdpGrowthRates ingested successfully
+2025-05-13 17:20:50,423 - ingestion - INFO - Table WhiskeyTypes
+2025-05-13 17:20:50,424 - ingestion - INFO - Table WhiskeyTypes ingested successfully
+2025-05-13 17:20:50,424 - ingestion - INFO - Table WhiskeyExports
+2025-05-13 17:20:50,428 - ingestion - INFO - Table WhiskeyExports ingested successfully
+2025-05-13 17:20:50,429 - ingestion - WARNING - 1 duplicates found in table WhiskeyExports
+2025-05-13 17:20:50,429 - ingestion - INFO - Finished ingestion.
+2025-05-13 17:24:21,961 - ingestion - INFO - Started ingestion
+2025-05-13 17:24:21,961 - ingestion - INFO - Table Countries
+2025-05-13 17:24:21,977 - ingestion - INFO - Table Countries ingested successfully
+2025-05-13 17:24:21,977 - ingestion - INFO - Table Years
+2025-05-13 17:24:21,979 - ingestion - INFO - Table Years ingested successfully
+2025-05-13 17:24:21,979 - ingestion - INFO - Table GdpGrowthRates
+2025-05-13 17:24:21,982 - ingestion - INFO - Table GdpGrowthRates ingested successfully
+2025-05-13 17:24:21,982 - ingestion - INFO - Table WhiskeyTypes
+2025-05-13 17:24:21,983 - ingestion - INFO - Table WhiskeyTypes ingested successfully
+2025-05-13 17:24:21,983 - ingestion - INFO - Table WhiskeyExports
+2025-05-13 17:24:21,987 - ingestion - INFO - Table WhiskeyExports ingested successfully
+2025-05-13 17:24:21,988 - ingestion - WARNING - 1 duplicates found in table WhiskeyExports
+2025-05-13 17:24:21,988 - ingestion - INFO - Finished ingestion.
+2025-05-13 17:44:36,465 - ingestion - INFO - Started ingestion
+2025-05-13 17:44:36,465 - ingestion - INFO - Table Countries
+2025-05-13 17:44:36,481 - ingestion - INFO - Table Countries ingested successfully
+2025-05-13 17:44:36,481 - ingestion - INFO - Table Years
+2025-05-13 17:44:36,483 - ingestion - INFO - Table Years ingested successfully
+2025-05-13 17:44:36,483 - ingestion - INFO - Table GdpGrowthRates
+2025-05-13 17:44:36,485 - ingestion - INFO - Table GdpGrowthRates ingested successfully
+2025-05-13 17:44:36,485 - ingestion - INFO - Table WhiskeyTypes
+2025-05-13 17:44:36,486 - ingestion - INFO - Table WhiskeyTypes ingested successfully
+2025-05-13 17:44:36,486 - ingestion - INFO - Table WhiskeyExports
+2025-05-13 17:44:36,490 - ingestion - INFO - Table WhiskeyExports ingested successfully
+2025-05-13 17:44:36,491 - ingestion - WARNING - 1 duplicates found in table WhiskeyExports
+2025-05-13 17:44:36,492 - ingestion - INFO - Finished ingestion.
+2025-05-13 17:44:55,915 - ingestion - INFO - Started ingestion
+2025-05-13 17:44:55,915 - ingestion - INFO - Table Countries
+2025-05-13 17:44:55,930 - ingestion - INFO - Table Countries ingested successfully
+2025-05-13 17:44:55,931 - ingestion - INFO - Table Years
+2025-05-13 17:44:55,932 - ingestion - INFO - Table Years ingested successfully
+2025-05-13 17:44:55,933 - ingestion - INFO - Table GdpGrowthRates
+2025-05-13 17:44:55,935 - ingestion - INFO - Table GdpGrowthRates ingested successfully
+2025-05-13 17:44:55,935 - ingestion - INFO - Table WhiskeyTypes
+2025-05-13 17:44:55,936 - ingestion - INFO - Table WhiskeyTypes ingested successfully
+2025-05-13 17:44:55,936 - ingestion - INFO - Table WhiskeyExports
+2025-05-13 17:44:55,940 - ingestion - INFO - Table WhiskeyExports ingested successfully
+2025-05-13 17:44:55,941 - ingestion - WARNING - 1 duplicates found in table WhiskeyExports
+2025-05-13 17:44:55,941 - ingestion - INFO - Finished ingestion.
+2025-05-13 17:45:08,809 - ingestion - INFO - Started ingestion
+2025-05-13 17:45:08,809 - ingestion - INFO - Table Countries
+2025-05-13 17:45:08,824 - ingestion - INFO - Table Countries ingested successfully
+2025-05-13 17:45:08,825 - ingestion - INFO - Table Years
+2025-05-13 17:45:08,826 - ingestion - INFO - Table Years ingested successfully
+2025-05-13 17:45:08,826 - ingestion - INFO - Table GdpGrowthRates
+2025-05-13 17:45:08,829 - ingestion - INFO - Table GdpGrowthRates ingested successfully
+2025-05-13 17:45:08,829 - ingestion - INFO - Table WhiskeyTypes
+2025-05-13 17:45:08,830 - ingestion - INFO - Table WhiskeyTypes ingested successfully
+2025-05-13 17:45:08,830 - ingestion - INFO - Table WhiskeyExports
+2025-05-13 17:45:08,833 - ingestion - INFO - Table WhiskeyExports ingested successfully
+2025-05-13 17:45:08,835 - ingestion - WARNING - 1 duplicates found in table WhiskeyExports
+2025-05-13 17:45:08,835 - ingestion - INFO - Finished ingestion.
+2025-05-13 17:46:49,839 - ingestion - INFO - Started ingestion
+2025-05-13 17:46:49,839 - ingestion - INFO - Table Countries
+2025-05-13 17:46:49,845 - ingestion - INFO - Table Countries ingested successfully
+2025-05-13 17:46:49,845 - ingestion - INFO - Table Years
+2025-05-13 17:46:49,847 - ingestion - INFO - Table Years ingested successfully
+2025-05-13 17:46:49,847 - ingestion - INFO - Table GdpGrowthRates
+2025-05-13 17:46:49,850 - ingestion - INFO - Table GdpGrowthRates ingested successfully
+2025-05-13 17:46:49,850 - ingestion - INFO - Table WhiskeyTypes
+2025-05-13 17:46:49,851 - ingestion - INFO - Table WhiskeyTypes ingested successfully
+2025-05-13 17:46:49,851 - ingestion - INFO - Table WhiskeyExports
+2025-05-13 17:46:49,855 - ingestion - INFO - Table WhiskeyExports ingested successfully
+2025-05-13 17:46:49,856 - ingestion - WARNING - 1 duplicates found in table WhiskeyExports
+2025-05-13 17:46:49,856 - ingestion - INFO - Finished ingestion.
+2025-05-13 17:53:52,814 - ingestion - INFO - Started ingestion
+2025-05-13 17:53:52,814 - ingestion - INFO - Table Countries
+2025-05-13 17:53:52,829 - ingestion - INFO - Table Countries ingested successfully
+2025-05-13 17:53:52,829 - ingestion - INFO - Table Years
+2025-05-13 17:53:52,831 - ingestion - INFO - Table Years ingested successfully
+2025-05-13 17:53:52,831 - ingestion - INFO - Table GdpGrowthRates
+2025-05-13 17:53:52,834 - ingestion - INFO - Table GdpGrowthRates ingested successfully
+2025-05-13 17:53:52,834 - ingestion - INFO - Table WhiskeyTypes
+2025-05-13 17:53:52,835 - ingestion - INFO - Table WhiskeyTypes ingested successfully
+2025-05-13 17:53:52,835 - ingestion - INFO - Table WhiskeyExports
+2025-05-13 17:53:52,839 - ingestion - INFO - Table WhiskeyExports ingested successfully
+2025-05-13 17:53:52,840 - ingestion - WARNING - 1 duplicates found in table WhiskeyExports
+2025-05-13 17:53:52,841 - ingestion - INFO - Finished ingestion.
