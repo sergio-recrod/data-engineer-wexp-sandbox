@@ -46,7 +46,7 @@ def get_top_country_per_type():
                 on we.WhiskeyType = wt.Id
             order by c.Name, wt.Type
         )
-        select cte.WhiskeyType, cte.CountryName, cte.Value
+        select cte.WhiskeyType, cte.CountryName, sum(cte.Value) as value
         from cte
         inner join (
             select WhiskeyType, max(Value) as Top
@@ -55,6 +55,7 @@ def get_top_country_per_type():
         ) topt
             on cte.WhiskeyType = topt.WhiskeyType
             and cte.Value = topt.Top
+        group by cte.WhiskeyType, cte.CountryName
     """).fetchall()
 
     return results
