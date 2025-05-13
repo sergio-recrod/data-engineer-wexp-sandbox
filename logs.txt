@@ -1,0 +1,36 @@
+2025-05-13 15:20:02,885 - ingestion - INFO - Started ingestion
+2025-05-13 15:20:02,885 - ingestion - INFO - Table countries
+2025-05-13 15:20:02,902 - ingestion - INFO - Table countries logged successfully
+2025-05-13 15:24:33,024 - ingestion - INFO - Started ingestion
+2025-05-13 15:24:33,024 - ingestion - INFO - Table countries
+2025-05-13 15:24:33,042 - ingestion - INFO - Table Countries logged successfully
+2025-05-13 15:24:33,042 - ingestion - INFO - Table GdpGrowthRates
+2025-05-13 15:24:33,045 - ingestion - INFO - Table GdpGrowthRates logged successfully
+2025-05-13 15:24:33,045 - ingestion - INFO - Table WhiskeyTypes
+2025-05-13 15:24:33,046 - ingestion - INFO - Table WhiskeyTypes logged successfully
+2025-05-13 15:24:33,046 - ingestion - INFO - Table WhiskeyExports
+2025-05-13 15:24:33,049 - ingestion - INFO - Table WhiskeyExports logged successfully
+2025-05-13 15:24:53,564 - ingestion - INFO - Started ingestion
+2025-05-13 15:24:53,564 - ingestion - INFO - Table countries
+2025-05-13 15:24:53,581 - ingestion - INFO - Table Countries logged successfully
+2025-05-13 15:24:53,581 - ingestion - INFO - Table GdpGrowthRates
+2025-05-13 15:24:53,583 - ingestion - INFO - Table GdpGrowthRates logged successfully
+2025-05-13 15:24:53,583 - ingestion - INFO - Table WhiskeyTypes
+2025-05-13 15:24:53,585 - ingestion - INFO - Table WhiskeyTypes logged successfully
+2025-05-13 15:24:53,585 - ingestion - INFO - Table WhiskeyExports
+2025-05-13 15:24:53,588 - ingestion - INFO - Table WhiskeyExports logged successfully
+2025-05-13 15:24:53,590 - ingestion - WARNING - 1 duplicates found in table WhiskeyExports
+2025-05-13 15:24:53,590 - ingestion - INFO - Finished ingestion.
+2025-05-13 15:25:11,220 - ingestion - INFO - Started ingestion
+2025-05-13 15:25:11,220 - ingestion - INFO - Table countries
+2025-05-13 15:25:11,246 - ingestion - ERROR - Table Countries failed to ingest with error:
+IO Error: No files found that match the pattern "wexp/data/Yearsss.csv"
+2025-05-13 15:25:11,246 - ingestion - INFO - Table GdpGrowthRates
+2025-05-13 15:25:11,250 - ingestion - ERROR - Table GdpGrowthRates failed to ingest with error:
+Constraint Error: Violates foreign key constraint because key "Id: 3" does not exist in the referenced table
+2025-05-13 15:25:11,250 - ingestion - INFO - Table WhiskeyTypes
+2025-05-13 15:25:11,252 - ingestion - INFO - Table WhiskeyTypes logged successfully
+2025-05-13 15:25:11,252 - ingestion - INFO - Table WhiskeyExports
+2025-05-13 15:25:11,258 - ingestion - INFO - Table WhiskeyExports logged successfully
+2025-05-13 15:25:11,259 - ingestion - WARNING - 1 duplicates found in table WhiskeyExports
+2025-05-13 15:25:11,260 - ingestion - INFO - Finished ingestion.

@@ -65,3 +65,25 @@ print(
         columns=["type", "top_country", "export"]
     ).sort_values(["type", "top_country", "export"])
 )
+
+def get_duplicates():
+    con = duckdb.connect(":default:")
+    results = con.execute("""
+        select *
+        from (
+            select CountryId, WhiskeyType, count(Id) as countrows
+            from WhiskeyExports
+            group by CountryId, WhiskeyType
+        )
+        where countrows > 1
+    """).fetchall()
+
+    return results
+
+dups = pd.DataFrame(
+        get_duplicates(),
+        columns=["countryid", "whiskeyid", "countrows"]
+).sort_values(["countryid", "whiskeyid", "countrows"])
+
+print(f"Dups: {len(dups)}")
+print(dups)
