@@ -14,8 +14,7 @@ logger = setup_logger(
 # interrupting the whole data loading
 def load_data(logger=logger):
     logger.info("Started ingestion")
-    logger.info("Table countries")
-
+    logger.info("Table Countries")
     try:
         duckdb.sql("""
         create table Countries(
@@ -27,7 +26,14 @@ def load_data(logger=logger):
         from 'wexp/data/Countries.csv'
         (auto_detect true)
         """)
+        logger.info("Table Countries ingested successfully")
+    except Exception as e:
+        logger.error(
+            f"Table Countries failed to ingest with error:\n{e}"
+        )
 
+    logger.info("Table Years")
+    try:
         duckdb.sql("""
         create table Years(
             Id     int primary key
@@ -38,12 +44,11 @@ def load_data(logger=logger):
         from 'wexp/data/Years.csv'
         (auto_detect true)
         """)
-        logger.info("Table Countries logged successfully")
+        logger.info("Table Years ingested successfully")
     except Exception as e:
         logger.error(
-            f"Table Countries failed to ingest with error:\n{e}"
+            f"Table Years failed to ingest with error:\n{e}"
         )
-
     # is this table needed? GDP growth could be a column in the Countries
     # table, as it seems to be unique for each country
     # a different matter would be if we had a time series, but we would need to add
@@ -67,7 +72,7 @@ def load_data(logger=logger):
         from 'wexp/data/GdpGrowthRates.csv'
         (auto_detect true);
         """)
-        logger.info("Table GdpGrowthRates logged successfully")
+        logger.info("Table GdpGrowthRates ingested successfully")
     except Exception as e:
         logger.error(
             f"Table GdpGrowthRates failed to ingest with error:\n{e}"
@@ -85,7 +90,7 @@ def load_data(logger=logger):
         from 'wexp/data/WhiskeyTypes.csv'
         (auto_detect true);
         """)
-        logger.info("Table WhiskeyTypes logged successfully")
+        logger.info("Table WhiskeyTypes ingested successfully")
     except Exception as e:
         logger.error(
             f"Table WhiskeyTypes failed to ingest with error:\n{e}"
@@ -115,7 +120,7 @@ def load_data(logger=logger):
         from 'wexp/data/WhiskeyExports.csv'
         (auto_detect true);
         """)
-        logger.info("Table WhiskeyExports logged successfully")
+        logger.info("Table WhiskeyExports ingested successfully")
     except Exception as e:
         logger.error(
             f"Table WhiskeyExports failed to ingest with error:\n{e}"
