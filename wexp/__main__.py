@@ -3,7 +3,8 @@ from load_data import load_data
 from exporters import (
     get_countries,
     get_top_types_per_country,
-    get_country_by_name
+    get_country_by_name,
+    get_top_country_per_type
 )
 
 
@@ -33,7 +34,16 @@ def show_top_types(*args):
                 print(f"\t{index + 1}: {export}")
         except:
             for index, export in enumerate(top_n(country.exports.values(), 3)):
-                print(f"\t{index + 1}: {export}")   
+                print(f"\t{index + 1}: {export}")
+
+
+def show_top_countries(*args):
+    for whiskey_type, countries in get_top_country_per_type().items():
+        print(whiskey_type)
+        for country in countries.keys():
+            print(f"\t{country}: {countries[country]}") 
+
+
 
 # new func to print single country by name
 def show_single_country(*args):
@@ -48,6 +58,7 @@ def show(commands):
     {
         "countries": show_countries,
         "top": show_top_types,
+        "types": show_top_countries,
         "single": show_single_country  # for single country
     }[commands[0]](commands[1:])
 

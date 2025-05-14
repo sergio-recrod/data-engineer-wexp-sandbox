@@ -159,6 +159,14 @@ def get_top_country_per_type():
 
     types = {}
     for record in results.fetchall():
-        print(record)
+        if record[0] not in types.keys():
+            types[record[0]] = {}
+        
+        c = get_country_by_name(record[1])
+        c.add(Export(record[0], record[2]))
+        if record[1] not in types[record[0]].keys():
+            types[record[0]][record[1]] = c.exports[record[0]]
+
+    return types
         
         

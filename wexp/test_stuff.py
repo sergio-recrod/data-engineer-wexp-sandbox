@@ -67,6 +67,8 @@ print(
     ).sort_values(["type", "top_country", "export"])
 )
 
+print(get_top_country_per_type())
+
 def get_duplicates():
     con = duckdb.connect(":default:")
     results = con.execute("""
